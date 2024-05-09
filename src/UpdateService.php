@@ -83,12 +83,14 @@ class UpdateService {
   /**
    * Constructs a new UpdateService object.
    */
-  public function __construct(UuidInterface $uuid,
-                              ConfigFactoryInterface $config_factory,
-                              ModuleHandlerInterface $module_handler,
-                              EntityTypeManagerInterface $entity_type_manager,
-                              EntityFieldManagerInterface $entity_field_manager,
-                              EntityLastInstalledSchemaRepositoryInterface $last_installed_schema_repository) {
+  public function __construct(
+    UuidInterface $uuid,
+    ConfigFactoryInterface $config_factory,
+    ModuleHandlerInterface $module_handler,
+    EntityTypeManagerInterface $entity_type_manager,
+    EntityFieldManagerInterface $entity_field_manager,
+    EntityLastInstalledSchemaRepositoryInterface $last_installed_schema_repository,
+  ) {
     $this->uuid = $uuid;
     $this->configFactory = $config_factory;
     $this->moduleHandler = $module_handler;
