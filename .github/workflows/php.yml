@@ -59,7 +59,7 @@ jobs:
         mkdir -p drupal/sites/simpletest/browser_output
   
     - name: Checkout apigee_api_catalog module
-      uses: actions/checkout@v3.0.0
+      uses: actions/checkout@v4
       with:
         path: drupal/modules/contrib/apigee_api_catalog
 
@@ -97,7 +97,7 @@ jobs:
         composer show > composer.show.txt
 
     - name: Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: composer-${{ matrix.php-version }}-${{ matrix.drupal-core }}-artifact
         path: drupal/composer.*
@@ -124,15 +124,16 @@ jobs:
 
     - name: Artifacts
       if: failure()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: browser-output-${{ matrix.php-version }}-${{ matrix.drupal-core }}-artifact
         path: drupal/sites/simpletest/browser_output/*
 
     - name: Upload Coverage to Codecov
       if: ${{ matrix.drupal-core == '10.1.x' && matrix.php-version == '8.1' }}
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
         files: /tmp/coverage.xml
         name: codecov-umbrella
         fail_ci_if_error: true
