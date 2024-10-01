@@ -22,10 +22,10 @@ namespace Drupal\Tests\apigee_api_catalog\Functional;
 
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Url;
-use Drupal\file\Entity\File;
-use Drupal\file\FileInterface;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\TestFileCreationTrait;
+use Drupal\file\Entity\File;
+use Drupal\file\FileInterface;
 
 /**
  * Simple test to ensure that main page loads with module enabled.
@@ -50,7 +50,7 @@ class ApiDocsAdminTest extends BrowserTestBase {
     'views',
     'apigee_api_catalog',
     'block',
-    'field_ui'
+    'field_ui',
   ];
 
   /**
@@ -144,7 +144,7 @@ class ApiDocsAdminTest extends BrowserTestBase {
     $assert->pageTextContains(new FormattableMarkup(
         'OpenAPI Doc @name has been created.',
         [
-          '@name' => $random_name
+          '@name' => $random_name,
         ]
       )
     );

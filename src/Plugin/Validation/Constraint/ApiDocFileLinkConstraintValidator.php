@@ -88,7 +88,7 @@ class ApiDocFileLinkConstraintValidator extends ConstraintValidator implements C
         ];
 
         // Perform only a HEAD method to save bandwidth.
-        /* @var $response \Psr\Http\Message\ResponseInterface */
+        /** @var \Psr\Http\Message\ResponseInterface $response */
         $response = $this->httpClient->head($url, $options);
       }
       catch (RequestException $request_exception) {

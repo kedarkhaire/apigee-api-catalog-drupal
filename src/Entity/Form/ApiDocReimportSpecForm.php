@@ -19,7 +19,6 @@
 
 namespace Drupal\apigee_api_catalog\Entity\Form;
 
-use Drupal\apigee_api_catalog\SpecFetcherInterface;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\ContentEntityConfirmFormBase;
@@ -30,6 +29,7 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
+use Drupal\apigee_api_catalog\SpecFetcherInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -135,7 +135,7 @@ class ApiDocReimportSpecForm extends ContentEntityConfirmFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    /* @var \Drupal\node\NodeInterface $entity */
+    /** @var \Drupal\node\NodeInterface $entity */
     $entity = $this->getEntity();
 
     if ($entity->get('field_apidoc_spec_file_source')->value != SpecFetcherInterface::SPEC_AS_URL) {

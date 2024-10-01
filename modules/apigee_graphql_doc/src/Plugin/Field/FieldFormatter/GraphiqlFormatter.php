@@ -92,9 +92,9 @@ class GraphiqlFormatter extends FormatterBase {
           'apigeeGraphqlDocFormatter' => [
             $this->fieldDefinition->getName() => [
               'graphqlUrls' => $graphql_urls,
-            ]
-          ]
-        ]
+            ],
+          ],
+        ],
       ];
     }
     return $element;

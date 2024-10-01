@@ -19,13 +19,10 @@
 
 namespace Drupal\apigee_api_catalog\Plugin\Field\FieldFormatter;
 
-use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
-use Drupal\Component\Serialization\Json;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Serialization\Yaml;
 use Drupal\file\Plugin\Field\FieldFormatter\FileFormatterBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -133,7 +130,7 @@ class SmartDocsFormatter extends FileFormatterBase implements ContainerFactoryPl
       'library' => [
         'apigee_api_catalog/js_yaml',
         'apigee_api_catalog/smartdocs_integration',
-        'apigee_api_catalog/smartdocs'
+        'apigee_api_catalog/smartdocs',
       ],
     ];
 
