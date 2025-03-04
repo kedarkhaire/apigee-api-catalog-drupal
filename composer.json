@@ -23,5 +23,12 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
+     "extra": {
+        "patches": {
+            "drupal/file_link": {
+                "Drupal 11 Support added": "https://www.drupal.org/files/issues/2025-02-27/drupal11_support-3430560.patch"
+            }
+        }
+    },
     "prefer-stable": true
 }
